@@ -31,13 +31,7 @@ while(iterator < len(lines)):
         trimmed = trimmed.replace('\n','')
         source.update({trimmed:0})
         iterator = iterator + 1
-print source
-print len(source)
-'''del link["105-118"]
-del link["106-114"]
-del link["111-115"]
-del link["112-103"]
-del link["105-107"]'''
+
 
 dataset = {}
 dictmcs = {}
