@@ -26,13 +26,6 @@ while(iterator < len(lines)):
         trimmed = trimmed.replace('\n','')
         link.update({trimmed:0})
         iterator = iterator + 1
-print link
-print len(link)
-'''del link["105-118"]
-del link["106-114"]
-del link["111-115"]
-del link["112-103"]
-del link["105-107"]'''
 dataset = {} #loop through all MCS
 count = 0
 for lnk in link:  # loop through each link in MCS
@@ -74,12 +67,6 @@ colHeaders=[1,2,3,4,5,6,7,8,9,10]
 for lnk in dataset:
 
     dataMatrix = np.array(dataset[lnk]) 
-    if(lnk == '102-120'):
-	print dataset[lnk]
-    #print dataMatrix
-    print lnk
-    if(lnk == '116-108'):
-        print dataMatrix
     distanceMatrix = dist.pdist(dataMatrix, 'euclidean')
     #print distanceMatrix
 
