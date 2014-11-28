@@ -18,22 +18,8 @@ def getOrderedRssiValues(rssival):
 		rssilist.append(rssival[rssiobj])
 	return rssilist	
 def isGoodLink(link):
-    '''if(link == '122-118' or link == '118-122' or link == '106-116' or link == '116-106'
-       or link == '122-107' or link == '122-103' or link == '121-103' or link == '106-109'
-        or link == '103-121' or link == '103-122' or link == '116-108'):
-		return False
-    else:
-		return True'''
-    if(str(link).__contains__('108-116') or link.__contains__('105-109') or link.__contains__('109-105')):
-        return False
-    else:
-        return True
-    #return True
-    '''del link["105-118"]
-	del link["106-114"]
-	del link["111-115"]
-	del link["112-103"]
-	del link["105-107"]'''
+    return True
+
 
 #Format for graph scripts
 #['"Tx retry"', '"Destination"', '"Number"', '"Tx Success"', '"Source"', '"MCS"', '"Delivery Ratio"', '"Link"\n']  
@@ -105,8 +91,6 @@ for dirname in glob.glob(rootdir +'*'):
                         #print val
                         break
                    elif(re.search(key,line,re.IGNORECASE) > 0 and key !='Source'):
-                        if (dataValues['MCS'].__contains__('mcs0')) and (dataValues['Link'].__contains__('103-107') or dataValues['Link'].__contains__('107-122') or dataValues['Link'].__contains__('107-118')):
-                            print dataValues                  
                             val = re.search(r'\d+',line).group()                          
                             dataValues[key] = val
                             print val
@@ -118,8 +102,7 @@ for dirname in glob.glob(rootdir +'*'):
                         #print val
                         break
                    elif(re.search(key,line,re.IGNORECASE) > 0 and key !='Source'):
-                        if (dataValues['MCS'].__contains__('mcs0')) and (dataValues['Link'].__contains__('103-107') or dataValues['Link'].__contains__('107-122') or dataValues['Link'].__contains__('107-118')):
-                            print dataValues                  
+                 
                             val = re.search(r'\d+',line).group()                           
                             dataValues[key] = val
                             print val
